@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#090B12">
+<meta name="color-scheme" content="dark">
+<title>For Violet · Happy 33rd Birthday</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22%3E%3Ctext%20y=%22.9em%22%20font-size=%2290%22%3E%F0%9F%92%8E%3C/text%3E%3C/svg%3E">
+<style>html,body{background:#090B12;margin:0;}</style>
+</head>
+<body>
+<style>
+  :root{
+    --ink:#090B12;
+    --ink-2:#0E1122;
+    --glow:#1a1f38;
+    --gold-lo:#A67C43;
+    --gold:#D9BB7E;
+    --gold-hi:#F6E9C4;
+    --ice:#EAF2FF;
+    --ivory:#F2ECE0;
+    --muted:#B9AC92;
+    --muted-2:#7C7768;
+    --hair:rgba(233,207,150,0.20);
+    --serif:"Didot","Bodoni 72","Playfair Display",Georgia,"Times New Roman",serif;
+    --serif-cn:"Songti SC","STSong","Noto Serif SC",var(--serif);
+    --hand-cn:"Kaiti SC","STKaiti","Kaiti TC","Noto Serif SC",var(--serif);
+    --sans:"Avenir Next","Avenir","Helvetica Neue",ui-sans-serif,system-ui,sans-serif;
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    min-height:100svh;
+    background:
+      radial-gradient(120% 80% at 50% 22%, rgba(30,36,66,0.55) 0%, rgba(12,14,26,0) 55%),
+      radial-gradient(90% 70% at 50% 120%, rgba(120,96,50,0.14) 0%, rgba(9,11,18,0) 60%),
+      var(--ink);
+    color:var(--ivory);
+    font-family:var(--serif);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+
+  #sparkles{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    z-index:0;
+    pointer-events:none;
+  }
+
+  .stage{
+    position:relative;
+    z-index:1;
+    min-height:100svh;
+    display:grid;
+    place-items:center;
+    padding:9vh 6vw;
+  }
+
+  .card{
+    width:min(37rem,100%);
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:0;
+  }
+
+  /* ---- shared reveal ---- */
+  .reveal{opacity:0;animation:riseIn 1.15s cubic-bezier(.2,.7,.2,1) both;}
+  .r1{animation-delay:.15s}
+  .r2{animation-delay:.4s}
+  .r3{animation-delay:1s}
+  .r4{animation-delay:1.35s}
+  .r5{animation-delay:1.7s}
+  .r6{animation-delay:2.15s}
+  .r7{animation-delay:2.75s}
+  .r8{animation-delay:3.15s}
+  @keyframes riseIn{
+    from{opacity:0;transform:translateY(20px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+
+  .eyebrow{
+    margin:0 0 2.4rem;
+    font-family:var(--sans);
+    font-size:.72rem;
+    font-weight:500;
+    letter-spacing:.42em;
+    text-transform:uppercase;
+    color:var(--muted);
+    padding-left:.42em;
+  }
+
+  /* ---- jewel ---- */
+  .jewel{
+    position:relative;
+    display:grid;
+    place-items:center;
+    margin-bottom:1.4rem;
+  }
+  #diamond{
+    width:clamp(122px,33vw,172px);
+    height:clamp(146px,39vw,204px);
+    display:block;
+  }
+
+  .cn-title{
+    margin:.2rem 0 0;
+    font-family:var(--serif-cn);
+    font-weight:600;
+    font-size:clamp(3rem,13vw,5.6rem);
+    line-height:1.02;
+    letter-spacing:.14em;
+    padding-left:.14em;
+    background:linear-gradient(100deg,#9A6F3A 0%,#E4CB94 34%,#FBF1D6 50%,#DBBD80 62%,#9A6F3A 100%);
+    background-size:220% auto;
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    -webkit-text-fill-color:transparent;
+    animation:sheen 7s linear 1.4s infinite;
+  }
+  @keyframes sheen{
+    0%{background-position:0% center;}
+    100%{background-position:220% center;}
+  }
+
+  .en-title{
+    margin:1.05rem 0 0;
+    font-family:var(--serif);
+    font-style:italic;
+    font-weight:400;
+    font-size:clamp(1.05rem,4.4vw,1.55rem);
+    letter-spacing:.12em;
+    color:var(--ivory);
+  }
+  .en-title sup{font-size:.62em;letter-spacing:0;}
+
+  .rule{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:1rem;
+    width:min(20rem,80%);
+    margin:2.2rem 0;
+    color:var(--gold);
+  }
+  .rule::before,.rule::after{
+    content:"";
+    height:1px;
+    flex:1;
+    background:linear-gradient(90deg,transparent,var(--hair) 30%,var(--gold) 100%);
+  }
+  .rule::after{transform:scaleX(-1);}
+  .rule span{font-size:.7rem;color:var(--gold);opacity:.85;}
+
+  .message{
+    margin:0;
+    font-family:var(--hand-cn);
+    font-size:clamp(1.06rem,4.5vw,1.24rem);
+    line-height:2.05;
+    letter-spacing:.03em;
+    color:#EDE6D6;
+    max-width:26rem;
+  }
+  .message p{margin:0;}
+  .message .em{color:var(--gold-hi);}
+  .message .en-line{
+    display:block;
+    margin-top:1.5rem;
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:clamp(.9rem,3.6vw,1rem);
+    line-height:1.6;
+    letter-spacing:.02em;
+    color:var(--muted);
+  }
+
+  .gift{
+    margin:2.4rem 0 0;
+    font-family:var(--sans);
+    font-size:.86rem;
+    letter-spacing:.12em;
+    line-height:1.9;
+    color:var(--gold);
+  }
+  .gift .spark{color:var(--gold-hi);margin:0 .5em;}
+  .gift .en{
+    display:block;
+    margin-top:.15rem;
+    font-size:.72rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--muted-2);
+  }
+
+  .sign{
+    margin:2.7rem 0 0;
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:clamp(1.1rem,4.4vw,1.4rem);
+    letter-spacing:.04em;
+    color:var(--gold-hi);
+  }
+  .sign small{
+    display:block;
+    margin-top:.5rem;
+    font-family:var(--sans);
+    font-style:normal;
+    font-size:.66rem;
+    letter-spacing:.34em;
+    text-transform:uppercase;
+    color:var(--muted-2);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;animation:none;}
+    .cn-title{animation:none;background-position:26% center;}
+  }
+</style>
+
+<canvas id="sparkles" aria-hidden="true"></canvas>
+
+<div class="stage">
+  <main class="card">
+    <p class="eyebrow reveal r1">For&nbsp;Violet&nbsp;&nbsp;·&nbsp;&nbsp;20&nbsp;July&nbsp;2026</p>
+
+    <div class="jewel reveal r2">
+      <canvas id="diamond" aria-hidden="true"></canvas>
+    </div>
+
+    <h1 class="cn-title reveal r3">生日快乐</h1>
+    <p class="en-title reveal r3">Happy&nbsp;33<sup>rd</sup>&nbsp;Birthday</p>
+
+    <div class="rule reveal r4"><span>✦</span></div>
+
+    <div class="message reveal r5">
+      <p>亲爱的 Violet，</p>
+      <p>三十三岁，生日快乐。</p>
+      <p>谢谢你，让我们的日子<span class="em">闪闪发亮</span>。</p>
+      <p>这一年，愿你被爱、被宠、被好好珍惜——</p>
+      <p>就像你一直值得的那样。</p>
+      <span class="en-line">To the one who makes everything sparkle —<br>happy birthday, my love.</span>
+    </div>
+
+    <p class="gift reveal r6">
+      <span class="spark">✦</span>你亲手挑的那颗钻石，正在来的路上<span class="spark">✦</span>
+      <span class="en">Your diamond is on its way</span>
+    </p>
+
+    <p class="sign reveal r7">永远爱你的 · Dale<small>With all my love</small></p>
+  </main>
+</div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- centrepiece diamond ---------- */
+  var dc = document.getElementById('diamond');
+  var dctx = dc.getContext('2d');
+  var dw, dh, S, cx, cy;
+
+  var P = {
+    tableL:[-0.26,-0.44], tableR:[0.26,-0.44],
+    qL:[-0.28,-0.06], qR:[0.28,-0.06],
+    gL:[-0.50,-0.06], gR:[0.50,-0.06],
+    culet:[0,0.56]
+  };
+  var facets = [
+    {pts:['tableL','tableR','qR','qL'], base:0.95, tone:'ice'},
+    {pts:['tableL','qL','gL'],          base:0.60, tone:'ice'},
+    {pts:['tableR','gR','qR'],          base:0.66, tone:'ice'},
+    {pts:['qL','qR','culet'],           base:0.52, tone:'mix'},
+    {pts:['gL','qL','culet'],           base:0.34, tone:'gold'},
+    {pts:['qR','gR','culet'],           base:0.40, tone:'gold'}
+  ];
+
+  function sizeDiamond(){
+    var dpr = Math.min(window.devicePixelRatio||1, 2);
+    var rect = dc.getBoundingClientRect();
+    dw = rect.width; dh = rect.height;
+    dc.width = Math.round(dw*dpr); dc.height = Math.round(dh*dpr);
+    dctx.setTransform(dpr,0,0,dpr,0,0);
+    S = Math.min(dw,dh) * 0.9;
+    cx = dw/2; cy = dh/2;
+  }
+  function pt(n){ var p=P[n]; return [cx+p[0]*S, cy+p[1]*S]; }
+  function shade(r,g,b,m){ m=Math.max(0,Math.min(1,m)); return 'rgb('+Math.round(r*m)+','+Math.round(g*m)+','+Math.round(b*m)+')'; }
+
+  function drawDiamond(t){
+    dctx.clearRect(0,0,dw,dh);
+
+    var glow = dctx.createRadialGradient(cx,cy,S*0.08,cx,cy,S*0.98);
+    glow.addColorStop(0,'rgba(228,208,153,0.24)');
+    glow.addColorStop(0.5,'rgba(150,172,226,0.09)');
+    glow.addColorStop(1,'rgba(0,0,0,0)');
+    dctx.fillStyle=glow;
+    dctx.beginPath(); dctx.arc(cx,cy,S*0.98,0,7); dctx.fill();
+
+    var sweep = (Math.sin(t/1500)+1)/2;
+    for(var i=0;i<facets.length;i++){
+      var f=facets[i], path=f.pts.map(pt);
+      dctx.beginPath();
+      for(var j=0;j<path.length;j++){ j?dctx.lineTo(path[j][0],path[j][1]):dctx.moveTo(path[j][0],path[j][1]); }
+      dctx.closePath();
+
+      var phase=i/facets.length;
+      var lift=0.5+0.5*Math.cos((sweep-phase)*Math.PI*2);
+      var b=Math.min(1, f.base*(0.72+0.5*lift));
+
+      var grd=dctx.createLinearGradient(cx,cy-S*0.46,cx,cy+S*0.56);
+      if(f.tone==='ice'){
+        grd.addColorStop(0,shade(234,242,255,b));
+        grd.addColorStop(1,shade(150,175,220,b*0.68));
+      }else if(f.tone==='gold'){
+        grd.addColorStop(0,shade(242,226,178,b*0.92));
+        grd.addColorStop(1,shade(150,118,64,b*0.72));
+      }else{
+        grd.addColorStop(0,shade(222,226,242,b));
+        grd.addColorStop(1,shade(184,152,96,b*0.7));
+      }
+      dctx.fillStyle=grd; dctx.fill();
+      dctx.lineWidth=1; dctx.strokeStyle='rgba(246,233,201,0.5)'; dctx.stroke();
+    }
+
+    var gx=cx+Math.sin(t/1000)*S*0.15, gy=cy-S*0.31;
+    var sp=dctx.createRadialGradient(gx,gy,0,gx,gy,S*0.13);
+    sp.addColorStop(0,'rgba(255,255,255,0.9)');
+    sp.addColorStop(1,'rgba(255,255,255,0)');
+    dctx.fillStyle=sp; dctx.beginPath(); dctx.arc(gx,gy,S*0.13,0,7); dctx.fill();
+  }
+
+  /* ---------- ambient sparkles ---------- */
+  var sc = document.getElementById('sparkles');
+  var sctx = sc.getContext('2d');
+  var sw, sh, stars=[];
+
+  function sizeSparkles(){
+    var dpr=Math.min(window.devicePixelRatio||1,2);
+    sw=window.innerWidth; sh=window.innerHeight;
+    sc.width=Math.round(sw*dpr); sc.height=Math.round(sh*dpr);
+    sctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  function initStars(){
+    stars=[];
+    var n=Math.round(Math.min(40, sw*sh/32000));
+    for(var i=0;i<n;i++){
+      stars.push({
+        x:Math.random()*sw, y:Math.random()*sh,
+        r:Math.random()*1.3+0.4, ph:Math.random()*Math.PI*2,
+        sp:0.5+Math.random()*0.9, drift:0.08+Math.random()*0.22,
+        gold:Math.random()<0.5
+      });
+    }
+  }
+  function drawStar(x,y,r,a,gold){
+    var col=gold?'240,222,170':'226,238,255';
+    sctx.globalAlpha=Math.max(0,Math.min(1,a));
+    var g=sctx.createRadialGradient(x,y,0,x,y,r*3.2);
+    g.addColorStop(0,'rgba('+col+',0.95)');
+    g.addColorStop(1,'rgba('+col+',0)');
+    sctx.fillStyle=g;
+    sctx.beginPath(); sctx.arc(x,y,r*3.2,0,7); sctx.fill();
+    sctx.strokeStyle='rgba('+col+',0.55)'; sctx.lineWidth=0.7;
+    sctx.beginPath();
+    sctx.moveTo(x-r*3.6,y); sctx.lineTo(x+r*3.6,y);
+    sctx.moveTo(x,y-r*3.6); sctx.lineTo(x,y+r*3.6);
+    sctx.stroke();
+    sctx.globalAlpha=1;
+  }
+
+  var startT=null, raf=null;
+  function frame(ts){
+    if(startT===null) startT=ts;
+    var t=ts-startT;
+    sctx.clearRect(0,0,sw,sh);
+    for(var i=0;i<stars.length;i++){
+      var s=stars[i];
+      var a=0.16+0.84*(0.5+0.5*Math.sin(t/1000*s.sp*3+s.ph));
+      drawStar(s.x,s.y,s.r,a,s.gold);
+      s.y-=s.drift*0.35;
+      if(s.y<-12){ s.y=sh+12; s.x=Math.random()*sw; }
+    }
+    drawDiamond(t);
+    raf=requestAnimationFrame(frame);
+  }
+
+  function boot(){
+    sizeSparkles(); initStars(); sizeDiamond();
+    if(reduce){
+      sctx.clearRect(0,0,sw,sh);
+      for(var i=0;i<stars.length;i++){ var s=stars[i]; drawStar(s.x,s.y,s.r,0.55,s.gold); }
+      drawDiamond(900);
+    }else{
+      raf=requestAnimationFrame(frame);
+    }
+  }
+
+  var rt;
+  window.addEventListener('resize',function(){
+    clearTimeout(rt);
+    rt=setTimeout(function(){
+      sizeSparkles(); initStars(); sizeDiamond();
+      if(reduce){
+        sctx.clearRect(0,0,sw,sh);
+        for(var i=0;i<stars.length;i++){ var s=stars[i]; drawStar(s.x,s.y,s.r,0.55,s.gold); }
+        drawDiamond(900);
+      }
+    },160);
+  });
+
+  boot();
+})();
+</script>
+</body>
+</html>
